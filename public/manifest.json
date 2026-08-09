@@ -1,0 +1,16 @@
+{
+  "name": "Fuji Medical Hall",
+  "short_name": "FujiMedical",
+  "description": "Your safe and reliable healthcare partner.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
