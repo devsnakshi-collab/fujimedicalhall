@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta name="google-site-verification" content="78nqVt6LH-0ZP6uvYBdeQd1EFFVHCNaZbtIH50UolPc" />
       </head>
       <body
         className="min-h-full flex flex-col bg-gradient-to-b from-emerald-200 via-emerald-50 to-white bg-fixed dark:from-emerald-950/60 dark:via-zinc-950 dark:to-zinc-950 text-zinc-800 dark:text-zinc-100 pb-20 md:pb-0"
