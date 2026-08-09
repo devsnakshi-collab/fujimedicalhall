@@ -214,7 +214,7 @@ export default function CartPage() {
               <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">
                 <MdLocalShipping className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <p className="text-xs text-emerald-800 dark:text-emerald-300 font-semibold leading-relaxed">
-                  Delivery: <strong>৳60</strong> inside Dhaka / <strong>৳120</strong> outside Dhaka.
+                  Delivery: <strong>৳60</strong> inside Bakshiganj / <strong>৳120</strong> outside Bakshiganj.
                   Cash on Delivery available.
                 </p>
               </div>

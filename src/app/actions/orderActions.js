@@ -37,7 +37,7 @@ export async function createOrder(orderData) {
       customerPhone: phone.trim(),
       phone: phone.trim(), // Keep phone for compatibility/admin UI
       address: address.trim(),
-      deliveryArea: deliveryArea || "Inside Dhaka",
+      deliveryArea: deliveryArea || "Inside Bakshiganj",
       notes: notes ? notes.trim() : "",
       email: email ? email.trim() : "",
       items: cartItems.map((item) => ({

@@ -265,7 +265,7 @@ function OrderCard({ order }) {
               )}
               {order.shippingFee != null && (
                 <div className="flex justify-between text-xs text-slate-500">
-                  <span>Shipping ({order.deliveryArea || "Inside Dhaka"})</span>
+                  <span>Shipping ({order.deliveryArea || "Inside Bakshiganj"})</span>
                   <span>৳{Number(order.shippingFee).toFixed(0)}</span>
                 </div>
               )}

@@ -26,7 +26,7 @@ export default function CheckoutPage() {
     customerName: "",
     phone: "",
     address: "",
-    deliveryArea: "Inside Dhaka",
+    deliveryArea: "Inside Bakshiganj",
     notes: "",
   });
 
@@ -40,7 +40,7 @@ export default function CheckoutPage() {
 
   const handleDeliveryAreaChange = (area) => {
     setForm({ ...form, deliveryArea: area });
-    setShippingFee(area === "Inside Dhaka" ? 60 : 120);
+    setShippingFee(area === "Inside Bakshiganj" ? 60 : 120);
   };
 
   const totalAmount = subtotal + shippingFee;
@@ -308,11 +308,11 @@ export default function CheckoutPage() {
                       padding: "16px",
                       borderRadius: "16px",
                       border:
-                        form.deliveryArea === "Inside Dhaka"
+                        form.deliveryArea === "Inside Bakshiganj"
                           ? "2px solid #16a34a"
                           : "1.5px solid #d1d5db",
                       backgroundColor:
-                        form.deliveryArea === "Inside Dhaka"
+                        form.deliveryArea === "Inside Bakshiganj"
                           ? "#f0fdf4"
                           : "#ffffff",
                       textAlign: "left",
@@ -325,12 +325,12 @@ export default function CheckoutPage() {
                         fontSize: "12px",
                         fontWeight: "800",
                         color:
-                          form.deliveryArea === "Inside Dhaka"
+                          form.deliveryArea === "Inside Bakshiganj"
                             ? "#15803d"
                             : "#374151",
                       }}
                     >
-                      Inside Dhaka
+                      Inside Bakshiganj
                     </p>
                     <p
                       style={{
@@ -346,16 +346,18 @@ export default function CheckoutPage() {
 
                   <button
                     type="button"
-                    onClick={() => handleDeliveryAreaChange("Outside Dhaka")}
+                    onClick={() =>
+                      handleDeliveryAreaChange("Outside Bakshiganj")
+                    }
                     style={{
                       padding: "16px",
                       borderRadius: "16px",
                       border:
-                        form.deliveryArea === "Outside Dhaka"
+                        form.deliveryArea === "Outside Bakshiganj"
                           ? "2px solid #16a34a"
                           : "1.5px solid #d1d5db",
                       backgroundColor:
-                        form.deliveryArea === "Outside Dhaka"
+                        form.deliveryArea === "Outside Bakshiganj"
                           ? "#f0fdf4"
                           : "#ffffff",
                       textAlign: "left",
@@ -368,12 +370,12 @@ export default function CheckoutPage() {
                         fontSize: "12px",
                         fontWeight: "800",
                         color:
-                          form.deliveryArea === "Outside Dhaka"
+                          form.deliveryArea === "Outside Bakshiganj"
                             ? "#15803d"
                             : "#374151",
                       }}
                     >
-                      Outside Dhaka
+                      Outside Bakshiganj
                     </p>
                     <p
                       style={{
