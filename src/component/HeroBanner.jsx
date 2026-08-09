@@ -6,37 +6,42 @@ import { MdArrowForward, MdStar, MdShoppingBag } from "react-icons/md";
 
 const SLIDES = [
   {
-    badge: "🧪 Home Collection",
+    badge: "Home Collection",
     tag: "FREE HOME VISIT",
     title: "Safe & Reliable\nHome Lab Tests",
     desc: "Sample collection at your doorstep. Certified reports in 24 hours.",
     accentFrom: "#064e3b",
     accentTo: "#065f46",
-    image: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=1200&auto=format&fit=crop&q=85",
+    image:
+      "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=1200&auto=format&fit=crop&q=85",
   },
   {
-    badge: "💊 Wholesale Prices",
+    badge: "Wholesale Prices",
     tag: "UP TO 40% OFF",
     title: "Genuine Medicines\nat Best Prices",
     desc: "Prescription drugs and OTC medicines from verified manufacturers.",
     accentFrom: "#134e4a",
     accentTo: "#0f766e",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&auto=format&fit=crop&q=85",
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&auto=format&fit=crop&q=85",
   },
   {
-    badge: "🩺 Online Consult",
+    badge: "Online Consult",
     tag: "AVAILABLE 24/7",
     title: "Instant Video\nConsultation",
     desc: "Connect with certified medical practitioners within 10 minutes.",
     accentFrom: "#052e16",
     accentTo: "#14532d",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=85",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=85",
   },
 ];
 
 function BannerBg({ src }) {
   const [imgSrc, setImgSrc] = useState(src);
-  useEffect(() => { setImgSrc(src); }, [src]);
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
   return (
     <Image
       src={imgSrc}
@@ -84,7 +89,9 @@ export default function HeroBanner() {
           {/* Left-heavy brand gradient */}
           <div
             className="absolute inset-0 z-10"
-            style={{ background: `linear-gradient(100deg, ${slide.accentFrom}F2 0%, ${slide.accentTo}D0 35%, ${slide.accentTo}70 55%, transparent 100%)` }}
+            style={{
+              background: `linear-gradient(100deg, ${slide.accentFrom}F2 0%, ${slide.accentTo}D0 35%, ${slide.accentTo}70 55%, transparent 100%)`,
+            }}
           />
 
           {/* Bottom vignette */}
@@ -92,19 +99,25 @@ export default function HeroBanner() {
 
           {/* Text content */}
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-5 sm:px-10 md:px-14 max-w-[90%] sm:max-w-[65%] md:max-w-[55%]">
-
             {/* Badge */}
             <div className="flex flex-wrap items-center gap-1.5 mb-2 sm:mb-3">
-              <span className="text-[11px] sm:text-xs text-white/90">{slide.badge}</span>
+              <span className="text-[11px] sm:text-xs text-white/90">
+                {slide.badge}
+              </span>
               <span className="px-2 py-0.5 text-[8px] sm:text-[9px] font-black rounded-full bg-white/20 text-emerald-100 border border-white/25 uppercase tracking-widest">
                 {slide.tag}
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="font-black text-white leading-[1.2] drop-shadow-md" style={{ fontSize: "clamp(1.1rem, 4.5vw, 2.5rem)" }}>
+            <h2
+              className="font-black text-white leading-[1.2] drop-shadow-md"
+              style={{ fontSize: "clamp(1.1rem, 4.5vw, 2.5rem)" }}
+            >
               {slide.title.split("\n").map((line, i) => (
-                <span key={i} className="block">{line}</span>
+                <span key={i} className="block">
+                  {line}
+                </span>
               ))}
             </h2>
 
@@ -128,7 +141,9 @@ export default function HeroBanner() {
               {[...Array(5)].map((_, i) => (
                 <MdStar key={i} className="w-3 h-3 text-amber-400" />
               ))}
-              <span className="text-[10px] font-semibold ml-1">4.9 · 12,000+ customers</span>
+              <span className="text-[10px] font-semibold ml-1">
+                4.9 · 12,000+ customers
+              </span>
             </div>
           </div>
         </div>
@@ -148,7 +163,8 @@ export default function HeroBanner() {
 
       {/* Slide counter */}
       <div className="absolute top-3 right-4 z-30 text-white/40 text-[9px] sm:text-[10px] font-bold tracking-widest">
-        {String(cur + 1).padStart(2, "0")} / {String(SLIDES.length).padStart(2, "0")}
+        {String(cur + 1).padStart(2, "0")} /{" "}
+        {String(SLIDES.length).padStart(2, "0")}
       </div>
     </section>
   );

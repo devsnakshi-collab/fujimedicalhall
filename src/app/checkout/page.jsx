@@ -47,13 +47,22 @@ export default function CheckoutPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.customerName.trim() || !form.phone.trim() || !form.address.trim()) {
+    if (
+      !form.customerName.trim() ||
+      !form.phone.trim() ||
+      !form.address.trim()
+    ) {
       setErrorMsg("Please fill in your Name, Phone Number, and Full Address.");
       return;
     }
 
-    if (paymentMethod === "bKash" && (!bKashPhone.trim() || !bKashTxnId.trim())) {
-      setErrorMsg("Please provide your bKash Mobile Number and Transaction ID.");
+    if (
+      paymentMethod === "bKash" &&
+      (!bKashPhone.trim() || !bKashTxnId.trim())
+    ) {
+      setErrorMsg(
+        "Please provide your bKash Mobile Number and Transaction ID.",
+      );
       return;
     }
 
@@ -71,7 +80,10 @@ export default function CheckoutPage() {
       subtotal,
       shippingFee,
       totalAmount,
-      paymentMethod: paymentMethod === "bKash" ? `bKash (Phone: ${bKashPhone.trim()}, TxnID: ${bKashTxnId.trim()})` : "Cash on Delivery",
+      paymentMethod:
+        paymentMethod === "bKash"
+          ? `bKash (Phone: ${bKashPhone.trim()}, TxnID: ${bKashTxnId.trim()})`
+          : "Cash on Delivery",
       email: "",
     };
 
@@ -131,7 +143,8 @@ export default function CheckoutPage() {
             <div className="flex justify-between">
               <span className="text-slate-500">Payment:</span>
               <span className="font-bold text-emerald-600 dark:text-emerald-400">
-                {completedOrder.paymentMethod} (৳{completedOrder.totalAmount?.toFixed(2)})
+                {completedOrder.paymentMethod} (৳
+                {completedOrder.totalAmount?.toFixed(2)})
               </span>
             </div>
           </div>
@@ -158,7 +171,8 @@ export default function CheckoutPage() {
             Your Cart is Empty
           </h2>
           <p className="text-xs text-slate-500">
-            Please add medicines or products to your cart before proceeding to checkout.
+            Please add medicines or products to your cart before proceeding to
+            checkout.
           </p>
           <Link
             href="/"
@@ -181,7 +195,8 @@ export default function CheckoutPage() {
               <MdLocalShipping /> Checkout & Delivery
             </h1>
             <p className="text-emerald-100 text-xs md:text-sm mt-1">
-              Complete your shipping details to receive your order with Cash on Delivery.
+              Complete your shipping details to receive your order with Cash on
+              Delivery.
             </p>
           </div>
           <button
@@ -194,10 +209,16 @@ export default function CheckoutPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-8">
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8"
+        >
           {/* Form Information Column */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-6" style={{backgroundColor: "#ffffff"}}>
+            <div
+              className="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-6"
+              style={{ backgroundColor: "#ffffff" }}
+            >
               <h2 className="text-lg font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                 <MdPerson className="text-emerald-600" /> Customer Information
               </h2>
@@ -220,7 +241,9 @@ export default function CheckoutPage() {
                     required
                     placeholder="Enter your full name"
                     value={form.customerName}
-                    onChange={(e) => setForm({ ...form, customerName: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, customerName: e.target.value })
+                    }
                     style={{
                       width: "100%",
                       backgroundColor: "#ffffff",
@@ -250,7 +273,9 @@ export default function CheckoutPage() {
                     required
                     placeholder="01826637443"
                     value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, phone: e.target.value })
+                    }
                     style={{
                       width: "100%",
                       backgroundColor: "#ffffff",
@@ -276,19 +301,47 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => handleDeliveryAreaChange("Inside Dhaka")}
+                    onClick={() =>
+                      handleDeliveryAreaChange("Inside Bakshigonj")
+                    }
                     style={{
                       padding: "16px",
                       borderRadius: "16px",
-                      border: form.deliveryArea === "Inside Dhaka" ? "2px solid #16a34a" : "1.5px solid #d1d5db",
-                      backgroundColor: form.deliveryArea === "Inside Dhaka" ? "#f0fdf4" : "#ffffff",
+                      border:
+                        form.deliveryArea === "Inside Dhaka"
+                          ? "2px solid #16a34a"
+                          : "1.5px solid #d1d5db",
+                      backgroundColor:
+                        form.deliveryArea === "Inside Dhaka"
+                          ? "#f0fdf4"
+                          : "#ffffff",
                       textAlign: "left",
                       cursor: "pointer",
                       transition: "all 0.15s",
                     }}
                   >
-                    <p style={{fontSize: "12px", fontWeight: "800", color: form.deliveryArea === "Inside Dhaka" ? "#15803d" : "#374151"}}>Inside Dhaka</p>
-                    <p style={{fontSize: "11px", fontWeight: "700", color: "#16a34a", marginTop: "4px"}}>Delivery: ৳60</p>
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "800",
+                        color:
+                          form.deliveryArea === "Inside Dhaka"
+                            ? "#15803d"
+                            : "#374151",
+                      }}
+                    >
+                      Inside Dhaka
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        fontWeight: "700",
+                        color: "#16a34a",
+                        marginTop: "4px",
+                      }}
+                    >
+                      Delivery: ৳60
+                    </p>
                   </button>
 
                   <button
@@ -297,15 +350,41 @@ export default function CheckoutPage() {
                     style={{
                       padding: "16px",
                       borderRadius: "16px",
-                      border: form.deliveryArea === "Outside Dhaka" ? "2px solid #16a34a" : "1.5px solid #d1d5db",
-                      backgroundColor: form.deliveryArea === "Outside Dhaka" ? "#f0fdf4" : "#ffffff",
+                      border:
+                        form.deliveryArea === "Outside Dhaka"
+                          ? "2px solid #16a34a"
+                          : "1.5px solid #d1d5db",
+                      backgroundColor:
+                        form.deliveryArea === "Outside Dhaka"
+                          ? "#f0fdf4"
+                          : "#ffffff",
                       textAlign: "left",
                       cursor: "pointer",
                       transition: "all 0.15s",
                     }}
                   >
-                    <p style={{fontSize: "12px", fontWeight: "800", color: form.deliveryArea === "Outside Dhaka" ? "#15803d" : "#374151"}}>Outside Dhaka</p>
-                    <p style={{fontSize: "11px", fontWeight: "700", color: "#16a34a", marginTop: "4px"}}>Delivery: ৳120</p>
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "800",
+                        color:
+                          form.deliveryArea === "Outside Dhaka"
+                            ? "#15803d"
+                            : "#374151",
+                      }}
+                    >
+                      Outside Dhaka
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        fontWeight: "700",
+                        color: "#16a34a",
+                        marginTop: "4px",
+                      }}
+                    >
+                      Delivery: ৳120
+                    </p>
                   </button>
                 </div>
               </div>
@@ -322,7 +401,9 @@ export default function CheckoutPage() {
                     required
                     placeholder="House/Holding no, Road, Area, Thana, District..."
                     value={form.address}
-                    onChange={(e) => setForm({ ...form, address: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, address: e.target.value })
+                    }
                     style={{
                       width: "100%",
                       backgroundColor: "#ffffff",
@@ -352,7 +433,9 @@ export default function CheckoutPage() {
                     type="text"
                     placeholder="e.g. Call before delivery, deliver after 3 PM"
                     value={form.notes}
-                    onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, notes: e.target.value })
+                    }
                     style={{
                       width: "100%",
                       backgroundColor: "#ffffff",
@@ -382,15 +465,40 @@ export default function CheckoutPage() {
                     style={{
                       padding: "16px",
                       borderRadius: "16px",
-                      border: paymentMethod === "Cash on Delivery" ? "2px solid #16a34a" : "1.5px solid #d1d5db",
-                      backgroundColor: paymentMethod === "Cash on Delivery" ? "#f0fdf4" : "#ffffff",
+                      border:
+                        paymentMethod === "Cash on Delivery"
+                          ? "2px solid #16a34a"
+                          : "1.5px solid #d1d5db",
+                      backgroundColor:
+                        paymentMethod === "Cash on Delivery"
+                          ? "#f0fdf4"
+                          : "#ffffff",
                       textAlign: "left",
                       cursor: "pointer",
                       transition: "all 0.15s",
                     }}
                   >
-                    <p style={{fontSize: "12px", fontWeight: "800", color: paymentMethod === "Cash on Delivery" ? "#15803d" : "#374151"}}>Cash on Delivery</p>
-                    <p style={{fontSize: "11px", color: "#6b7280", marginTop: "4px"}}>Pay cash at your doorstep</p>
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "800",
+                        color:
+                          paymentMethod === "Cash on Delivery"
+                            ? "#15803d"
+                            : "#374151",
+                      }}
+                    >
+                      Cash on Delivery
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "#6b7280",
+                        marginTop: "4px",
+                      }}
+                    >
+                      Pay cash at your doorstep
+                    </p>
                   </button>
 
                   <button
@@ -399,15 +507,36 @@ export default function CheckoutPage() {
                     style={{
                       padding: "16px",
                       borderRadius: "16px",
-                      border: paymentMethod === "bKash" ? "2px solid #d946ef" : "1.5px solid #d1d5db",
-                      backgroundColor: paymentMethod === "bKash" ? "#fdf4ff" : "#ffffff",
+                      border:
+                        paymentMethod === "bKash"
+                          ? "2px solid #d946ef"
+                          : "1.5px solid #d1d5db",
+                      backgroundColor:
+                        paymentMethod === "bKash" ? "#fdf4ff" : "#ffffff",
                       textAlign: "left",
                       cursor: "pointer",
                       transition: "all 0.15s",
                     }}
                   >
-                    <p style={{fontSize: "12px", fontWeight: "800", color: paymentMethod === "bKash" ? "#a21caf" : "#374151"}}>bKash Mobile Banking</p>
-                    <p style={{fontSize: "11px", color: "#6b7280", marginTop: "4px"}}>Send money to 01826637443</p>
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "800",
+                        color:
+                          paymentMethod === "bKash" ? "#a21caf" : "#374151",
+                      }}
+                    >
+                      bKash Mobile Banking
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "#6b7280",
+                        marginTop: "4px",
+                      }}
+                    >
+                      Send money to 01826637443
+                    </p>
                   </button>
                 </div>
 
@@ -415,12 +544,19 @@ export default function CheckoutPage() {
                   <div className="mt-4 p-4 rounded-2xl bg-fuchsia-50/50 border border-fuchsia-200 space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
                     <div className="text-xs text-fuchsia-800">
                       <p className="font-bold">Instructions:</p>
-                      <p className="mt-1">Please Send Money ৳{totalAmount.toFixed(2)} to our Merchant Account: <strong>01826637443</strong>. Then enter your bKash mobile number and the Transaction ID below.</p>
+                      <p className="mt-1">
+                        Please Send Money ৳{totalAmount.toFixed(2)} to our
+                        Merchant Account: <strong>01826637443</strong>. Then
+                        enter your bKash mobile number and the Transaction ID
+                        below.
+                      </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-600 mb-1">bKash Number</label>
+                        <label className="block text-[11px] font-bold text-slate-600 mb-1">
+                          bKash Number
+                        </label>
                         <input
                           type="tel"
                           placeholder="017xxxxxxxx"
@@ -439,7 +575,9 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-600 mb-1">Transaction ID (TxnID)</label>
+                        <label className="block text-[11px] font-bold text-slate-600 mb-1">
+                          Transaction ID (TxnID)
+                        </label>
                         <input
                           type="text"
                           placeholder="e.g. BKA87K2J4"
@@ -478,9 +616,14 @@ export default function CheckoutPage() {
                     item.offerPrice !== null && item.offerPrice !== undefined
                       ? Number(item.offerPrice)
                       : Number(item.price);
-                  const imageSrc = item.image || `https://placehold.co/80x80/10b981/ffffff?text=${encodeURIComponent(item.name || "Item")}`;
+                  const imageSrc =
+                    item.image ||
+                    `https://placehold.co/80x80/10b981/ffffff?text=${encodeURIComponent(item.name || "Item")}`;
                   return (
-                    <div key={item._id} className="flex items-center justify-between text-xs pt-3 first:pt-0">
+                    <div
+                      key={item._id}
+                      className="flex items-center justify-between text-xs pt-3 first:pt-0"
+                    >
                       <div className="flex items-center gap-3 min-w-0 pr-2">
                         <img
                           src={imageSrc}

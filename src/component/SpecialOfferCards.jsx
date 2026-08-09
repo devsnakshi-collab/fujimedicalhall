@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { FaFacebookMessenger } from "react-icons/fa6";
 
 /* ─── Card Definitions (Aroggo Exact Structure) ──────────────── */
 const CARDS = [
@@ -24,28 +25,13 @@ const CARDS = [
     id: "prescription",
     gradient: "linear-gradient(160deg, #d2f6f9 0%, #63d4e2 45%, #00a4b8 100%)",
     iconBg: "#00acc1",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="white"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-6 h-6"
-      >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="9" y1="13" x2="15" y2="13"></line>
-        <line x1="9" y1="17" x2="13" y2="17"></line>
-      </svg>
-    ),
-    topLabel: "UPTO",
-    title: "10% OFF",
-    subtitle: "+ Cashback",
-    btnText: "Upload Prescription",
+    icon: <FaFacebookMessenger className="w-6 h-6 text-white" />,
+    topLabel: "ORDER",
+    title: "Via Messanger",
+    subtitle: "Md Farhan Shishir",
+    btnText: "Message Now",
     btnColor: "#00acc1",
-    href: "#upload",
+    href: "https://m.me/md.farhan.shishir.2024",
   },
   {
     id: "store",
@@ -66,11 +52,11 @@ const CARDS = [
       </svg>
     ),
     topLabel: "UPTO",
-    title: "14% OFF",
-    subtitle: "+ Cashback",
+    title: "View Store",
+    subtitle: "Browse Products",
     btnText: "Shop Now",
     btnColor: "#73a800",
-    href: "#products",
+    href: "https://www.fujimedicalhall.com/categories",
   },
   {
     id: "call",
@@ -81,12 +67,12 @@ const CARDS = [
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
       </svg>
     ),
-    topLabel: "UPTO",
-    title: "10% OFF",
-    subtitle: "16770",
+    topLabel: "ORDER",
+    title: "Order Now",
+    subtitle: "+880 1826-637443",
     btnText: "Call",
     btnColor: "#f37021",
-    href: "tel:16770",
+    href: "tel:+880 1826-637443",
   },
 ];
 
